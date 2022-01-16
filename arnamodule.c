@@ -184,11 +184,11 @@ static ssize_t arna_write(struct file *flip, const char *buffer,unsigned long le
     char* cmd;
 
 
-    // if (copy_from_user(cmd, buffer, strlen(buffer)) ) 
+    // if (!copy_from_user(cmd, buffer, 100) )
     //     return -EFAULT;
-    int bl = copy_from_user(cmd, buffer, 100);
+    
+    int bl = copy_from_user(cmd, buffer, strlen(buffer));
     printk(KERN_INFO "ARNA:: IN WRITE FUNCTION {%d}\n", bl);
-
 
     //need lock
 
