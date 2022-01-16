@@ -186,7 +186,7 @@ static ssize_t arna_write(struct file *flip, const char *buffer,unsigned long le
 
     // if (copy_from_user(cmd, buffer, strlen(buffer)) ) 
     //     return -EFAULT;
-    int bl = copy_from_user(cmd, buffer, strlen(buffer));
+    int bl = copy_from_user(cmd, buffer, 100);
     printk(KERN_INFO "ARNA:: IN WRITE FUNCTION {%d}\n", bl);
 
 
