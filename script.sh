@@ -5,7 +5,8 @@ TMP=`cat /proc/devices | grep arnamodule | cut -d" " -f 1`
 sudo mknod /dev/arnanode c $TMP $RANDOM
 
 # RUN TEST
+sudo python3 ./pytest.py
 
 sudo rm -rf /dev/arnanode &&sudo rmmod arnamodule && make clean
 
-echo "\x1b[6;30;42m have a nice time. bye bye! \x1b[0m"
+echo "$(tput setaf 0) $(tput setab 2) have a nice time. bye bye! $(tput sgr 0)"

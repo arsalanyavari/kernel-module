@@ -1,8 +1,8 @@
 obj-m = iutmodule.o
 .DEFAULT_GOAL := all
 all:
-	@echo "\x1b[6;30;42m making install :) \x1b[0m"
+	@echo "$(tput setaf 0) $(tput setab 2) making install :) $(tput sgr 0)"
 	@make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
 clean:
-	@echo "\x1b[6;30;41m making clean :( \x1b[0m"
+	@echo "$(tput setaf 0) $(tput setab 1) making clean :( $(tput sgr 0)"
 	@make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
