@@ -1,4 +1,4 @@
-obj-m = iutmodule.o
+obj-m = arnamodule.o
 .DEFAULT_GOAL := install
 install:
 	@echo "$(tput setaf 0) $(tput setab 3) Making install :) $(tput sgr 0)"
