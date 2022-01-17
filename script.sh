@@ -1,7 +1,7 @@
 #! /bin/bash
 
 make &&sudo insmod arnamodule.ko
-TMP=`cat /proc/devices | grep arnamodule | cut -d" " -f 1`
+TMP=cat /proc/devices | grep ARNA | cut -d" " -f 1
 sudo mknod /dev/arnanode c $TMP $RANDOM
 
 # RUN TEST
