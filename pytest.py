@@ -30,14 +30,14 @@ def write_to_file(fd: int, cmd: str):
 
 
 def gateway_1(fd: int):
-    for i in range(100):
+    for i in range(1000000):
         dis_acnt = randint(1, 99)
         cmd = enteghal_action(str(dis_acnt), '0', 1)
         write_to_file(fd, cmd)
 
 
 def gateway_2(fd: int):
-    for i in range(100):
+    for i in range(1000000):
         dis_acnt = randint(1, 99)
         cmd = enteghal_action(str(dis_acnt), '0', 1)
         write_to_file(fd, cmd)
